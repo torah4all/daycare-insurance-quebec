@@ -27,7 +27,7 @@ const translations = {
     faqTwoTitle: "Who is it for?", faqTwoText: "It is intended for daycare owners throughout Quebec. Use the inquiry form to share your daycare details and questions.",
     faqThreeTitle: "How do I get started?", faqThreeText: "Send your daycare name, contact details, and any optional notes through the private inquiry form.",
     contactEyebrow: "Let’s start with the basics", contactTitle: "A few details.<br /><em>A better conversation.</em>", contactText: "Use the form to share a little about your daycare and what you’re looking for. This form sends your inquiry securely without displaying the destination email address on the page.",
-    contactServingTitle: "Serving", contactServingText: "All of Quebec", formKicker: "Private inquiry form", formName: "Contact person’s name <span>*</span>", formBusiness: "Daycare name <span>*</span>", formEmail: "Email address <span>*</span>", formPhone: "Phone number <span>*</span>", formLanguage: "Preferred language", formTime: "Preferred contact time <span class=\"optional\">(optional)</span>", formMessage: "Message or notes <span class=\"optional\">(optional)</span>", optional: "(optional)", formConsent: "I’m okay with being contacted about this inquiry. <b>*</b>", formButton: "Send inquiry <span>→</span>", formStatus: "Your message will be sent privately to the insurance contact.",
+    contactServingTitle: "Serving", contactServingText: "All of Quebec", formKicker: "Private inquiry form", formName: "Contact person’s name <span>*</span>", formBusiness: "Daycare name <span>*</span>", formEmail: "Email address <span>*</span>", formPhone: "Phone number <span>*</span>", formLanguage: "Preferred language", formTime: "Preferred contact time <span class=\"optional\">(optional)</span>", formMessage: "Message or notes <span class=\"optional\">(optional)</span>", optional: "(optional)", formConsent: "I’m okay with being contacted about this inquiry. <b>*</b>", formButton: "Send inquiry <span>→</span>", formStatus: "Online delivery is temporarily unavailable. The inquiry service must be connected before messages can be sent.",
     reassuranceEyebrow: "No pressure, no guesswork", reassuranceTitle: "Bring your questions.<br /><em>We’ll take it from there.</em>", reassuranceText: "Submitting this form is a request to connect, not an application or a promise of coverage. The owner should add the final privacy notice, response timing, and any required licensing language before publishing."
   },
   fr: {
@@ -52,7 +52,7 @@ const translations = {
     faqTwoTitle: "À qui s’adresse-t-il?", faqTwoText: "Il s’adresse aux propriétaires de garderies partout au Québec. Utilisez le formulaire pour partager vos renseignements et vos questions.",
     faqThreeTitle: "Comment commencer?", faqThreeText: "Envoyez le nom de votre garderie, vos coordonnées et, si vous le souhaitez, quelques notes au moyen du formulaire privé.",
     contactEyebrow: "Commençons par l’essentiel", contactTitle: "Quelques détails.<br /><em>Une meilleure discussion.</em>", contactText: "Utilisez le formulaire pour nous parler un peu de votre garderie et de vos besoins. Votre demande sera envoyée de façon privée, sans afficher l’adresse courriel de destination sur la page.",
-    contactServingTitle: "Région desservie", contactServingText: "Partout au Québec", formKicker: "Formulaire de demande privé", formName: "Nom de la personne-ressource <span>*</span>", formBusiness: "Nom de la garderie <span>*</span>", formEmail: "Adresse courriel <span>*</span>", formPhone: "Numéro de téléphone <span>*</span>", formLanguage: "Langue préférée", formTime: "Moment préféré pour être contacté <span class=\"optional\">(facultatif)</span>", formMessage: "Message ou notes <span class=\"optional\">(facultatif)</span>", optional: "(facultatif)", formConsent: "J’accepte d’être contacté au sujet de cette demande. <b>*</b>", formButton: "Envoyer la demande <span>→</span>", formStatus: "Votre message sera envoyé de façon privée au contact d’assurance.",
+    contactServingTitle: "Région desservie", contactServingText: "Partout au Québec", formKicker: "Formulaire de demande privé", formName: "Nom de la personne-ressource <span>*</span>", formBusiness: "Nom de la garderie <span>*</span>", formEmail: "Adresse courriel <span>*</span>", formPhone: "Numéro de téléphone <span>*</span>", formLanguage: "Langue préférée", formTime: "Moment préféré pour être contacté <span class=\"optional\">(facultatif)</span>", formMessage: "Message ou notes <span class=\"optional\">(facultatif)</span>", optional: "(facultatif)", formConsent: "J’accepte d’être contacté au sujet de cette demande. <b>*</b>", formButton: "Envoyer la demande <span>→</span>", formStatus: "L’envoi en ligne est temporairement indisponible. Le service de réception doit être configuré avant l’envoi des messages.",
     reassuranceEyebrow: "Sans pression ni suppositions", reassuranceTitle: "Apportez vos questions.<br /><em>Nous vous guiderons ensuite.</em>", reassuranceText: "L’envoi de ce formulaire est une demande de prise de contact, et non une demande officielle ni une promesse de couverture. Le propriétaire devra ajouter l’avis de confidentialité, le délai de réponse et les mentions de permis requises avant la mise en ligne."
   }
 };
@@ -132,10 +132,11 @@ document.addEventListener("keydown", (event) => {
 const form = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
 
-form?.addEventListener("submit", () => {
+form?.addEventListener("submit", (event) => {
+  event.preventDefault();
   if (!formStatus) return;
   const language = document.documentElement.lang;
   formStatus.textContent = language === "fr"
-    ? "Envoi de votre demande… La page de confirmation du service s’ouvrira ensuite."
-    : "Sending your inquiry… The service confirmation page will open next.";
+    ? "L’envoi en ligne est temporairement indisponible. Le service de réception doit être configuré avant l’envoi des messages."
+    : "Online delivery is temporarily unavailable. The inquiry service must be connected before messages can be sent.";
 });

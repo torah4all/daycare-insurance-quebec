@@ -22,11 +22,7 @@
         <div><p class="eyebrow"><span class="eyebrow-dot"></span> <span data-i18n="contactEyebrow">Let’s start with the basics</span></p><h1 data-i18n="contactTitle">A few details.<br /><em>A better conversation.</em></h1><p class="hero-text" data-i18n="contactText">Use the form to share a little about your daycare and what you’re looking for. This form sends your inquiry securely without displaying the destination email address on the page.</p><div class="contact-detail"><span>⌖</span><p><strong data-i18n="contactServingTitle">Serving</strong><br /><span data-i18n="contactServingText">All of Quebec</span></p></div><img class="contact-photo" src="assets/classroom-care.png" alt="Educator guiding children through play and learning" /></div>
         <div class="form-card">
           <div class="form-card-top"><span class="form-kicker" data-i18n="formKicker">Private inquiry form</span><button class="info-button" type="button" data-modal-open aria-label="About this form">i</button></div>
-          <form id="contact-form" action="https://formsubmit.co/roffek9@hotmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New daycare insurance inquiry" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="true" />
-            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="honeypot" aria-hidden="true" />
+          <form id="contact-form" data-submit-state="backend-required">
             <label for="name" data-i18n="formName">Contact person’s name <span>*</span></label><input id="name" name="contact_name" type="text" autocomplete="name" placeholder="Jane Smith" required />
             <label for="business" data-i18n="formBusiness">Daycare name <span>*</span></label><input id="business" name="daycare_name" type="text" placeholder="Your daycare name" required />
             <label for="email" data-i18n="formEmail">Email address <span>*</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
@@ -35,7 +31,7 @@
             <label for="message" data-i18n="formMessage">Message or notes <span class="optional" data-i18n="optional">(optional)</span></label><textarea id="message" name="message" rows="4" placeholder="Tell us about your daycare or what you would like to discuss..."></textarea>
             <label class="checkbox-label"><input type="checkbox" name="permission" value="Yes" required /><span data-i18n="formConsent">I’m okay with being contacted about this inquiry. <b>*</b></span></label>
             <button class="button button-full" type="submit" data-i18n="formButton">Send inquiry <span>→</span></button>
-            <p class="form-status" id="form-status" role="status" data-i18n="formStatus">Your message will be sent privately to the insurance contact.</p>
+            <p class="form-status form-status-warning" id="form-status" role="status" data-i18n="formStatus">Online delivery is temporarily unavailable. The inquiry service must be connected before messages can be sent.</p>
           </form>
         </div>
       </section>
