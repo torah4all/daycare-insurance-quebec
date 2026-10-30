@@ -132,25 +132,10 @@ document.addEventListener("keydown", (event) => {
 const form = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
 
-form?.addEventListener("submit", async (event) => {
-  event.preventDefault();
+form?.addEventListener("submit", () => {
   if (!formStatus) return;
   const language = document.documentElement.lang;
-  formStatus.textContent = language === "fr" ? "Envoi en cours..." : "Sending your inquiry...";
-  try {
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: new FormData(form),
-      headers: { Accept: "application/json" }
-    });
-    if (!response.ok) throw new Error("Form submission failed");
-    form.reset();
-    formStatus.textContent = language === "fr"
-      ? "Merci! Votre demande a été envoyée."
-      : "Thank you! Your inquiry has been sent.";
-  } catch {
-    formStatus.textContent = language === "fr"
-      ? "L’envoi n’a pas fonctionné. Veuillez réessayer."
-      : "The inquiry could not be sent. Please try again.";
-  }
+  formStatus.textContent = language === "fr"
+    ? "Envoi de votre demande… La page de confirmation du service s’ouvrira ensuite."
+    : "Sending your inquiry… The service confirmation page will open next.";
 });
