@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contact Daycare Insurance to start a Quebec daycare insurance conversation." />
+    <title>Contact | Daycare Insurance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+  </head>
+  <body class="contact-page">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Home"><img class="brand-mark" src="logo.svg" alt="" /><span><strong data-i18n="brandName">Daycare Insurance</strong><small data-i18n="brandRegion">Quebec</small></span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="index.html#why-us" data-i18n="navWhy">Why this matters</a><a href="index.html#how-it-works" data-i18n="navHow">How it works</a><a href="index.html#faq">FAQ</a><a class="lang-switch" href="#" data-lang-toggle>FR</a><a class="button button-small" href="contact.html" data-i18n="navContact">Start a conversation <span>↗</span></a></nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    </header>
+    <main>
+      <section class="contact-hero section-shell reveal">
+        <div><p class="eyebrow"><span class="eyebrow-dot"></span> <span data-i18n="contactEyebrow">Let’s start with the basics</span></p><h1 data-i18n="contactTitle">A few details.<br /><em>A better conversation.</em></h1><p class="hero-text" data-i18n="contactText">Use the form to share a little about your daycare and what you’re looking for. This form sends your inquiry securely without displaying the destination email address on the page.</p><div class="contact-detail"><span>⌖</span><p><strong data-i18n="contactServingTitle">Serving</strong><br /><span data-i18n="contactServingText">All of Quebec</span></p></div><img class="contact-photo" src="assets/classroom-care.png" alt="Educator guiding children through play and learning" /></div>
+        <div class="form-card">
+          <div class="form-card-top"><span class="form-kicker" data-i18n="formKicker">Private inquiry form</span><button class="info-button" type="button" data-modal-open aria-label="About this form">i</button></div>
+          <form id="contact-form" action="https://formsubmit.co/ajax/roffek9@hotmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New daycare insurance inquiry" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="honeypot" aria-hidden="true" />
+            <label for="name" data-i18n="formName">Contact person’s name <span>*</span></label><input id="name" name="contact_name" type="text" autocomplete="name" placeholder="Jane Smith" required />
+            <label for="business" data-i18n="formBusiness">Daycare name <span>*</span></label><input id="business" name="daycare_name" type="text" placeholder="Your daycare name" required />
+            <label for="email" data-i18n="formEmail">Email address <span>*</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            <div class="form-row"><div><label for="phone" data-i18n="formPhone">Phone number <span>*</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555" required /></div><div><label for="language" data-i18n="formLanguage">Preferred language</label><select id="language" name="preferred_language"><option value="English">English</option><option value="French">Français</option><option value="Either">Either / Les deux</option></select></div></div>
+            <label for="time" data-i18n="formTime">Preferred contact time <span class="optional" data-i18n="optional">(optional)</span></label><input id="time" name="preferred_contact_time" type="text" placeholder="Example: weekday mornings" />
+            <label for="message" data-i18n="formMessage">Message or notes <span class="optional" data-i18n="optional">(optional)</span></label><textarea id="message" name="message" rows="4" placeholder="Tell us about your daycare or what you would like to discuss..."></textarea>
+            <label class="checkbox-label"><input type="checkbox" name="permission" value="Yes" required /><span data-i18n="formConsent">I’m okay with being contacted about this inquiry. <b>*</b></span></label>
+            <button class="button button-full" type="submit" data-i18n="formButton">Send inquiry <span>→</span></button>
+            <p class="form-status" id="form-status" role="status" data-i18n="formStatus">Your message will be sent privately to the insurance contact.</p>
+          </form>
+        </div>
+      </section>
+      <section class="contact-reassurance reveal"><div class="section-shell reassurance-grid"><div><p class="eyebrow eyebrow-dark" data-i18n="reassuranceEyebrow">No pressure, no guesswork</p><h2 data-i18n="reassuranceTitle">Bring your questions.<br /><em>We’ll take it from there.</em></h2></div><p data-i18n="reassuranceText">Submitting this form is a request to connect, not an application or a promise of coverage. The owner should add the final privacy notice, response timing, and any required licensing language before publishing.</p></div></section>
+    </main>
+    <footer class="site-footer"><div class="section-shell footer-bottom"><span>© <span id="year"></span> Daycare Insurance. All rights reserved.</span><a href="index.html">Back to home ↑</a></div></footer>
+    <div class="modal-backdrop" data-modal hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" type="button" data-modal-close aria-label="Close">×</button><p class="eyebrow">A clear first step</p><h2 id="modal-title">What happens after you send?</h2><p>Your details go through the form relay to the insurance contact. The form does not publish your information. They can then review your note and reach out using the contact details you provide.</p><p class="modal-note">This is an inquiry—not an application, quote, or promise of coverage.</p></div></div>
+    <script src="script.js"></script>
+  </body>
+</html>
